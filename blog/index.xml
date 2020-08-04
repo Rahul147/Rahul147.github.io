@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on Rahul Dharan</title>
+    <link>http://rahuldharan.com/blog/</link>
+    <description>Recent content in Blog on Rahul Dharan</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 01 Jun 2019 23:01:26 +0530</lastBuildDate>
+    
+	<atom:link href="http://rahuldharan.com/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to Cheat Death - Josephus Problem</title>
+      <link>http://rahuldharan.com/blog/how-to-cheat-death-josephus-problem/</link>
+      <pubDate>Sat, 01 Jun 2019 23:01:26 +0530</pubDate>
+      
+      <guid>http://rahuldharan.com/blog/how-to-cheat-death-josephus-problem/</guid>
+      <description>Let’s begin by describing Josephus problem:
+ People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed.</description>
+    </item>
+    
+    <item>
+      <title>How to Watch Ipl on Hotstar for Free With Only 2 Lines of Code</title>
+      <link>http://rahuldharan.com/blog/how-to-watch-ipl-on-hotstar-for-free-with-only-2-lines-of-code/</link>
+      <pubDate>Sat, 16 Mar 2019 22:36:00 +0530</pubDate>
+      
+      <guid>http://rahuldharan.com/blog/how-to-watch-ipl-on-hotstar-for-free-with-only-2-lines-of-code/</guid>
+      <description>Disclaimer: I do not advice anyone to use this to watch content on Hotstar for free, this is purely for educational purposes.
+ India Premier League can be streamed live on Hotstar, note that it’s a paid service. Here’s where Hotstar messed up, since Hotstar is so nice they allow you to watch a 10 minute preview without logging into the platform.
+As soon as I noticed this, my spidey senses started to tingle.</description>
+    </item>
+    
+  </channel>
+</rss>

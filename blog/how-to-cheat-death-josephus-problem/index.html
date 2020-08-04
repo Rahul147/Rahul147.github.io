@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+<meta name="author" content="Rahul Dharan">
+<meta name="description" content="Let’s begin by describing Josephus problem:
+ People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed.">
+
+<meta property="og:title" content="How to Cheat Death - Josephus Problem" />
+<meta property="og:description" content="Let’s begin by describing Josephus problem:
+ People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://rahuldharan.com/blog/how-to-cheat-death-josephus-problem/" />
+<meta property="article:published_time" content="2019-06-01T23:01:26+05:30" />
+<meta property="article:modified_time" content="2019-06-01T23:01:26+05:30" />
+
+
+<title>
+
+
+     How to Cheat Death - Josephus Problem 
+
+</title>
+<link rel="canonical" href="http://rahuldharan.com/blog/how-to-cheat-death-josephus-problem/">
+
+
+
+
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css">
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Ubuntu+Mono:400,400i,700,700i|Raleway:500">
+
+
+
+    
+    <link rel="stylesheet" href="http://rahuldharan.com/css/reset.css?t=2020-08-04%2023%3a22%3a54.503399%20%2b0530%20IST%20m%3d%2b0.120696088">
+    <link rel="stylesheet" href="http://rahuldharan.com/css/pygments.css?t=2020-08-04%2023%3a22%3a54.503399%20%2b0530%20IST%20m%3d%2b0.120696088">
+    <link rel="stylesheet" href="http://rahuldharan.com/css/main.css?t=2020-08-04%2023%3a22%3a54.503399%20%2b0530%20IST%20m%3d%2b0.120696088">
+    
+        <link rel="stylesheet" href="http://rahuldharan.com/css/override.css?t=2020-08-04%2023%3a22%3a54.503399%20%2b0530%20IST%20m%3d%2b0.120696088">
+    
+
+
+
+
+<link rel="shortcut icon"
+
+    href="http://rahuldharan.com/https://gravatar.com/avatar/b32deffab8673c2e2487d26fbf104dc9?s=50"
+
+>
+
+
+
+
+
+
+
+
+</head>
+
+
+<body lang="en">
+
+<section class="header">
+    <div class="container">
+        <div class="content">
+            
+            <a href="http://rahuldharan.com/"><img class="avatar" src="https://gravatar.com/avatar/b32deffab8673c2e2487d26fbf104dc9?s=50?s=50" rcset="https://gravatar.com/avatar/b32deffab8673c2e2487d26fbf104dc9?s=50?s=100 2x, https://gravatar.com/avatar/b32deffab8673c2e2487d26fbf104dc9?s=50?s=150 3x, https://gravatar.com/avatar/b32deffab8673c2e2487d26fbf104dc9?s=50?s=200 4x"></a>
+            
+            <a href="http://rahuldharan.com/"><div class="name">Rahul Dharan</div></a>
+            
+              <h3 class="self-intro">JavaScript&#39;s Own Boy</h3>
+            
+            <nav>
+                <ul>
+                    
+                        <li class="nav-blog"><a href="http://rahuldharan.com/blog/"><span>Blog</span></a></li>
+                    
+                        <li class="nav-about"><a href="http://rahuldharan.com/about/"><span>About</span></a></li>
+                    
+                        <li class="nav-projects"><a href="http://rahuldharan.com/projects/"><span>Projects</span></a></li>
+                    
+                        <li class="nav-resume"><a href="http://rahuldharan.com/resume/"><span>Resume</span></a></li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+</section>
+
+<section class="icons">
+    <div class="container">
+        <div class="content">
+        
+            <a href="https://github.com/Rahul147" target="_blank" rel="noopener"><img class="icon" src="http://rahuldharan.com/img/github.svg" alt="github" /></a>
+        
+
+        
+
+        
+            <a href="https://twitter.com/rahul_dharan" target="_blank" rel="noopener"><img class="icon" src="http://rahuldharan.com/img/twitter.svg" alt="twitter" /></a>
+        
+
+	
+
+        
+
+        
+
+        
+            <a href="https://www.linkedin.com/in/rahul-dharan/" target="_blank" rel="noopener"><img class="icon" src="http://rahuldharan.com/img/linkedin.svg" alt="linkedin" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="https://www.instagram.com/rahul_dharan/" target="_blank" rel="noopener"><img class="icon" src="http://rahuldharan.com/img/instagram.svg" alt="instagram" /></a>
+        
+
+        
+
+        
+
+        
+            <a href="mailto:rahuldharan@hotmail.com"><img class="icon" src="http://rahuldharan.com/img/email.svg" alt="email" /></a>
+        
+
+        
+
+        
+        </div>
+    </div>
+</section>
+
+
+<section class="main post non-narrow zero-top-spacing">
+    <div class="container">
+        <div class="content">
+            <div class="front-matter">
+                <div class="title-container">
+                    <div class="page-heading">
+
+    How to Cheat Death - Josephus Problem
+
+</div>
+
+                    <div class="initials"><a href="http://rahuldharan.com/"></a></div>
+                </div>
+                <div class="meta">
+                    
+                    <div class="date" title='Sat Jun 1 2019 23:01:26 IST'>Jun 1, 2019</div>
+                    
+                    
+		    <div class="reading-time"><div class="middot"></div>4 minutes read</div>
+                    
+                </div>
+            </div>
+            <div class="markdown">
+                <p>Let’s begin by describing Josephus problem:</p>
+<blockquote>
+<p>People are standing in a circle waiting to be executed. Counting begins at a specified point in the circle and proceeds around the circle in a specified direction. After a specified number of people are skipped, the next person is executed. The procedure is repeated with the remaining people, starting with the next person, going in the same direction and skipping the same number of people, until only one person remains, and is freed. The problem — given the number of people, starting point, direction, and number to be skipped — is to choose the position in the initial circle to avoid execution.</p>
+</blockquote>
+<p>Sound pretty interesting right ? If you were in this situation, which seat would you sit in?</p>
+<p>Let’s start with two soldiers sitting in two chairs, in this case it’s pretty straightforward. If we start with soldier 1, then soldier 1 kills soldier 2 and he survives, so in case of two soldiers, chair 1 is the safest.</p>
+<p>Let’s extend this logic to 3 chairs, soldier 1 kills soldier 2 and soldier 3 kills soldier 1. Chair 3 is the safest.</p>
+<p>This is easy to do for few soldiers, but when the number of soldiers increase it becomes difficult to calculate. Surely there must be a better approach, let’s draw out a chart showing who survives based on the number of soldiers.</p>
+<p><img src="https://i.imgur.com/EdsdIma.png" alt="survival chart"></p>
+<p>There’s an interesting observation here, for every 2^n th seat 1 always wins and for anything between 2^n and 2^(n+1) the winners are just consecutive odd numbers. We have a pattern here.</p>
+<p>For a given configuration of X soldiers, find the closest 2^n that is less than X. Then the safest seat is <strong>2 * [X - (2^n)] + 1</strong>. Here we find the closest 2^n number and jump those many numbers in the odd number scale.</p>
+<p>Let’s take an example, for X = 5, nearest (2^n) is 4 which is 2², so 2 * [5 - 2²] + 1 is 3. Which is the right answer.</p>
+<p>There you have it, now you know which seat to pick if you ever face such a situation. Choose wisely 😉.</p>
+<p>But this isn’t fun. It’d be fun to actually simulate the whole process right? Let’s do that.</p>
+<hr>
+<p>We’ll use p5.js to simulate this using JavaScript(why JavaScript you ask? read my bio).</p>
+<p>We can split the project into two main blocks:</p>
+<ol>
+<li>Soldier class that knows how to draw itself on the screen, change states from alive to dead and kill another soldier.</li>
+<li>The actual algorithm that runs the simulation.</li>
+</ol>
+<p>Here’s what a soldier class would look like:</p>
+<p><img src="https://i.imgur.com/uFfkw9P.png" alt="soldier class snippet"></p>
+<p>Now that we the soldier class out of the way, let’s see how the main algorithm works.</p>
+<p>Let us store all the users in a <a href="https://en.wikipedia.org/wiki/Circular_buffer">circular array</a>, soldier class has two static variables which store the total number of soldiers and the number of soldiers alive.</p>
+<p>p5.js has two critical functions <a href="https://p5js.org/reference/#/p5/setup">setup</a> and <a href="https://p5js.org/reference/#/p5/draw">draw</a> . In the setup function, we will initialise coordinates for all soldier objects. These soldier objects need to be drawn in a circular fashion, each of the soldier has a x and y value, these determine where the soldier will be drawn on the screen.</p>
+<p><img src="https://i.imgur.com/HaKZEaq.png" alt="setup function"></p>
+<p>We need to be able to draw points in a circular fashion.</p>
+<p>Each point on the circle represents a soldier. r is the distance the soldier is going to be placed from the center of the circle. We space all soldiers equidistantly on the circle’s circumference.</p>
+<p><img src="https://i.imgur.com/H9JSts4.png" alt="radius and angle relationships of a circle"></p>
+<p>We need to convert Cartesian coordinates to polar and plot equal number of points on the circle.</p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="mi">360</span> <span class="o">/</span> <span class="nx">numberOfSoldiers</span><span class="p">;</span>
+</code></pre></div><p>Here the numberOfSoldiers is a arbitrary constant we set at the beginning of the simulation, this can be altered to find solutions for various values of <code>n</code>.</p>
+<p>Dividing 360⁰ into equal angles and plotting them on the circle.</p>
+<p><img src="https://i.imgur.com/W2P5xcQ.jpg" alt="cartesian to polar coordinates"></p>
+<p>Now to the final part of the simulation, the main simulation algorithm:</p>
+<ol>
+<li>Check if the number of soldiers alive is equal to 1, if yes then his seat number is the safest, end the simulation.</li>
+<li>If the number of soldiers alive is greater than 1, then find the soldier who is alive and store his seat number let’s call this prevIndex, now loop through the array and find the next soldier who is alive, let’s save his seat number as currentIndex , now soldier at prevIndex kills soldier at currentIndex . While iterating through the array make sure you account for index overflow by implementing a circular array.</li>
+<li>Goto step 1</li>
+</ol>
+<p>Here’s what the final output looks like -</p>
+<p><img src="https://i.imgur.com/OKtthur.gif" alt="output image"></p>
+<h3 id="the-code-is-available-on-github-view-">The code is available on github( view ).</h3>
+
+                <br>
+                
+                <p class="back-to-posts"><a href="http://rahuldharan.com/blog">Back to posts</a></p>
+            </div>
+            <br>
+            <div class="disqus">
+                <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "rahuldharan-com" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-121706091-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
+  
+
+  <script type="text/javascript">
+    hljs.initHighlightingOnLoad();
+  </script>
+
+
+
+
+
+</body>
+</html>
+
