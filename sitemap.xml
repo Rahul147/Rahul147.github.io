@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://rahuldharan.com/blog/</loc>
+    <lastmod>2020-08-14T21:28:23+05:30</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://rahuldharan.com/blog/setup-your-personal-blog-for-0-github-hugo-3/</loc>
+    <lastmod>2020-08-14T21:28:23+05:30</lastmod>
+  </url>
+  
+  <url>
     <loc>https://rahuldharan.com/projects/</loc>
     <lastmod>2020-08-04T23:26:30+05:30</lastmod>
   </url>
@@ -20,11 +30,6 @@
   <url>
     <loc>https://rahuldharan.com/about/</loc>
     <lastmod>2020-08-04T23:16:19+05:30</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://rahuldharan.com/blog/</loc>
-    <lastmod>2019-06-01T23:01:26+05:30</lastmod>
   </url>
   
   <url>
