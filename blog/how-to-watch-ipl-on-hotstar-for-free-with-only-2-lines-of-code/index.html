@@ -18,9 +18,10 @@ As soon as I noticed this, my spidey senses started to tingle.">
  India Premier League can be streamed live on Hotstar, note that it’s a paid service. Here’s where Hotstar messed up, since Hotstar is so nice they allow you to watch a 10 minute preview without logging into the platform.
 As soon as I noticed this, my spidey senses started to tingle." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rahuldharan.com/blog/how-to-watch-ipl-on-hotstar-for-free-with-only-2-lines-of-code/" />
+<meta property="og:url" content="https://rahuldharan.com/blog/how-to-watch-ipl-on-hotstar-for-free-with-only-2-lines-of-code/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2019-03-16T22:36:00+05:30" />
 <meta property="article:modified_time" content="2019-03-16T22:36:00+05:30" />
+
 
 
 <title>
@@ -47,11 +48,11 @@ As soon as I noticed this, my spidey senses started to tingle." />
 
 
     
-    <link rel="stylesheet" href="https://rahuldharan.com/css/reset.css?t=2020-11-12%2019%3a40%3a10.149219%20%2b0530%20IST%20m%3d%2b0.124206029">
-    <link rel="stylesheet" href="https://rahuldharan.com/css/pygments.css?t=2020-11-12%2019%3a40%3a10.149219%20%2b0530%20IST%20m%3d%2b0.124206029">
-    <link rel="stylesheet" href="https://rahuldharan.com/css/main.css?t=2020-11-12%2019%3a40%3a10.149219%20%2b0530%20IST%20m%3d%2b0.124206029">
+    <link rel="stylesheet" href="https://rahuldharan.com/css/reset.css?t=2021-12-30%2020%3a57%3a03.02879%20%2b0530%20IST%20m%3d%2b0.049132133">
+    <link rel="stylesheet" href="https://rahuldharan.com/css/pygments.css?t=2021-12-30%2020%3a57%3a03.02879%20%2b0530%20IST%20m%3d%2b0.049132133">
+    <link rel="stylesheet" href="https://rahuldharan.com/css/main.css?t=2021-12-30%2020%3a57%3a03.02879%20%2b0530%20IST%20m%3d%2b0.049132133">
     
-        <link rel="stylesheet" href="https://rahuldharan.com/css/override.css?t=2020-11-12%2019%3a40%3a10.149219%20%2b0530%20IST%20m%3d%2b0.124206029">
+        <link rel="stylesheet" href="https://rahuldharan.com/css/override.css?t=2021-12-30%2020%3a57%3a03.02879%20%2b0530%20IST%20m%3d%2b0.049132133">
     
 
 
@@ -181,12 +182,12 @@ As soon as I noticed this, my spidey senses started to tingle." />
 <p><img src="https://cdn-images-1.medium.com/max/720/1*7crTyRKFb1F_ZHK7sPa60w.png" alt="image of localstorage"></p>
 <p>Turns out this is the only value they use to sync time with the server, now all we have to do is clear this. Instead of clearing exactly one value, we will use generic code to clear everything from localStorage.</p>
 <p>The code is pretty straight forward:</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">();</span>
 </code></pre></div><p>But we have an issue, just running this won’t work because the website keeps sending requests to sync time with the server, by the time we run the script and reload the page, the page would have sent out multiple requests and synced with the server.</p>
 <p>The solution is to run the code repetitively using <code>setInterval</code>.</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
 </code></pre></div><p>Now all we have to do is reload the page for it to take action. Since Hotstar allows you to watch a preview of 10 mins we can reload the tab at the 9th minute.</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
 <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">()</span> <span class="p">},</span> <span class="mi">540000</span><span class="p">);</span>
 </code></pre></div><ul>
 <li>*<em>540000 is 9 minutes in milliseconds.</em></li>
@@ -194,7 +195,7 @@ As soon as I noticed this, my spidey senses started to tingle." />
 <p>voilà we are done, this is all it takes to beat the system.</p>
 <p>You might have noticed there was some manual intervention required, so I wrote a chrome extension to inject the above mentioned code into the target page.</p>
 <p>Let’s set up the <code>manifest.json</code> file for the chrome extension with the following permissions.</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">...</span>
 <span class="s2">&#34;permissions&#34;</span><span class="o">:</span> <span class="p">[</span>
   <span class="s2">&#34;tabs&#34;</span><span class="p">,</span>
   <span class="s2">&#34;activeTab&#34;</span>
@@ -205,7 +206,7 @@ As soon as I noticed this, my spidey senses started to tingle." />
 <p>After about 9 minutes when the page reloads we listen to reload event and inject the code into the active tab. This keeps repeating, giving us a perfect loop, every 9 minutes the page reloads and on reload the script is injected again resetting the timer.</p>
 <h3 id="the-code-is-available-on-github-viewhttpsgithubcomrahul147hotstar-exploit-">The code is available on github( <a href="https://github.com/Rahul147/hotstar-exploit">view</a> ).</h3>
 <p>EDIT: Hotstar reduced the freemium time from 10 minutes to 5 minutes, we can fix this by changing the code to -</p>
-<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">localStorage</span><span class="p">.</span><span class="nx">clear</span><span class="p">()</span> <span class="p">},</span> <span class="mi">0</span><span class="p">);</span>
 <span class="nx">setTimeout</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="p">{</span> <span class="nb">window</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">reload</span><span class="p">()</span> <span class="p">},</span> <span class="mi">180000</span><span class="p">);</span>
 </code></pre></div><ul>
 <li><em>180000 is 3 minutes in milliseconds.</em></li>

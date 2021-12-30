@@ -16,9 +16,10 @@ It’s easy to write bullet points on a slide and speak for hours on that topic 
 <meta property="og:description" content="Why do I need a blog? Let’s look at the fundamentals - penning down your thoughts isn’t easy, it forces you to think, which brings clarity and perspective. For example - at Amazon, meetings to present ideas do not start with PowerPoint slides but with dense and structured memo(s).
 It’s easy to write bullet points on a slide and speak for hours on that topic but to structure it and pen it down is whole new ball game, you can’t just wing it." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://rahuldharan.com/blog/setup-your-personal-blog-for-0-github-hugo-3/" />
+<meta property="og:url" content="https://rahuldharan.com/blog/setup-your-personal-blog-for-0-github-hugo-3/" /><meta property="article:section" content="blog" />
 <meta property="article:published_time" content="2020-08-14T21:28:23+05:30" />
 <meta property="article:modified_time" content="2020-08-14T21:28:23+05:30" />
+
 
 
 <title>
@@ -45,11 +46,11 @@ It’s easy to write bullet points on a slide and speak for hours on that topic 
 
 
     
-    <link rel="stylesheet" href="https://rahuldharan.com/css/reset.css?t=2020-11-12%2019%3a40%3a10.079386%20%2b0530%20IST%20m%3d%2b0.054374577">
-    <link rel="stylesheet" href="https://rahuldharan.com/css/pygments.css?t=2020-11-12%2019%3a40%3a10.079386%20%2b0530%20IST%20m%3d%2b0.054374577">
-    <link rel="stylesheet" href="https://rahuldharan.com/css/main.css?t=2020-11-12%2019%3a40%3a10.079386%20%2b0530%20IST%20m%3d%2b0.054374577">
+    <link rel="stylesheet" href="https://rahuldharan.com/css/reset.css?t=2021-12-30%2020%3a57%3a03.031562%20%2b0530%20IST%20m%3d%2b0.051903971">
+    <link rel="stylesheet" href="https://rahuldharan.com/css/pygments.css?t=2021-12-30%2020%3a57%3a03.031562%20%2b0530%20IST%20m%3d%2b0.051903971">
+    <link rel="stylesheet" href="https://rahuldharan.com/css/main.css?t=2021-12-30%2020%3a57%3a03.031562%20%2b0530%20IST%20m%3d%2b0.051903971">
     
-        <link rel="stylesheet" href="https://rahuldharan.com/css/override.css?t=2020-11-12%2019%3a40%3a10.079386%20%2b0530%20IST%20m%3d%2b0.054374577">
+        <link rel="stylesheet" href="https://rahuldharan.com/css/override.css?t=2021-12-30%2020%3a57%3a03.031562%20%2b0530%20IST%20m%3d%2b0.051903971">
     
 
 
@@ -182,7 +183,7 @@ It’s easy to write bullet points on a slide and speak for hours on that topic 
 </ol>
 <h2 id="how-do-i-get-started">How do I get started?</h2>
 <p>Now that we have that out of the way, let us get down to business. Let’s start off by creating a Hugo static site on our local machine. Run the following command to create the Hugo site for your blog.</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">hugo</span> <span class="nx">new</span> <span class="nx">site</span> <span class="nx">personal_blog</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">hugo</span> <span class="nx">new</span> <span class="nx">site</span> <span class="nx">personal_blog</span>
 </code></pre></div><p>Replace <code>personal_blog</code> with your domain name (mine would be <code>rahuldharan.com</code>) this keeps things simple and easy to manage.</p>
 <p>It should have created the following directories post running the command —
 <img src="https://miro.medium.com/max/291/1*rQ903Paxj0XWkDYOQgqpEQ.png" alt="directory structure after Hugo site generation"></p>
@@ -191,14 +192,14 @@ It’s easy to write bullet points on a slide and speak for hours on that topic 
 <p>Themes are a big part of Hugo, where community builds and distributes themes, they bring in the much needed “life” to each blog/website. To get a catalogue of themes — <a href="https://themes.gohugo.io/">visit Hugo Themes</a>.</p>
 </blockquote>
 <p>We’ll be using a clean and simplistic theme — <a href="https://github.com/frjo/hugo-theme-zen">Zen</a>. To install the theme run the following command —</p>
-<pre><code class="language-git" data-lang="git">git clone https://github.com/frjo/hugo-theme-zen.git themes/zen
+<pre tabindex="0"><code class="language-git" data-lang="git">git clone https://github.com/frjo/hugo-theme-zen.git themes/zen
 </code></pre><p>Once this is setup we’ll need to configure the <code>config.yaml</code> file, we can use <a href="https://github.com/frjo/hugo-theme-zen#configuration">this as the base config file</a>. Change the contents of the config file according to your preferences (which is highly customizable).</p>
 <p>To run the site generator and serve the files use (this does not generate the static files) -</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">hugo</span> <span class="nx">server</span> <span class="o">--</span><span class="nx">watch</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">hugo</span> <span class="nx">server</span> <span class="o">--</span><span class="nx">watch</span>
 </code></pre></div><p>Visit <a href="http://localhost:1313">http://localhost:1313</a> to view the generated site!</p>
 <h2 id="how-do-i-blog-">How do I blog ?</h2>
 <p>Let’s create our first blog post with one simple command —</p>
-<div class="highlight"><pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">hugo</span> <span class="nx">new</span> <span class="nx">blog</span><span class="o">/</span><span class="nx">my</span><span class="o">-</span><span class="nx">first</span><span class="o">-</span><span class="nx">blog</span><span class="p">.</span><span class="nx">md</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="nx">hugo</span> <span class="nx">new</span> <span class="nx">blog</span><span class="o">/</span><span class="nx">my</span><span class="o">-</span><span class="nx">first</span><span class="o">-</span><span class="nx">blog</span><span class="p">.</span><span class="nx">md</span>
 </code></pre></div><p>Notice how the blog files is a <code>*.md</code> file? It’s because Hugo supports <a href="https://en.wikipedia.org/wiki/Markdown">MarkDown syntax</a>; We’ll be writing our blog posts using <a href="https://www.markdownguide.org/getting-started">MarkDown</a>.</p>
 <p>This creates our first blog post, navigate to <code>content/blog</code>, in there you’ll find <code>my-first-blog.md</code>. This is the file we’ll need to edit, currently in the file <code>draft: true</code> is set, which means Hugo will ignore this page (since this is a draft), so change it to <code>draft: false</code>. Go ahead and write your heart out.</p>
 <p>Once you’re done, you’ll notice that the website (your blog) has refreshed automatically and a new post entry is present!</p>
